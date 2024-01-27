@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Varela+Round&display=swap');
+* {box-sizing: border-box}
+body {font-family:'Poppins', sans-serif;}
+
+.heading{
+    background-color: #c6d9fa;
+    padding: 5px 5px 10px 20px;
+    flex-direction: row;
+    align-items: center;
+}
+img{
+    padding: 0 15px 0 10px;
+    height: 8vh;
+    position: 0 10;
+}
+/* Style the tab */
+.tab {
+  display: block;
+  width: 10em;
+  height: 90vh;
+  grid-area: tab;
+  background-color: #c6d9fa;
+  border: solid 2px #90abda;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: #d6e2f7;
+  color: #90abda;
+  padding: 22px 16px;
+  width: 100%;
+  border-radius: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 20px;
+  color: #2023d49a;
+  gap: 5px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #c3d1eb;
+}
+
+/* Create an active/current "tab button" class */
+.tab button .active {
+  background-color: #b2c8f0;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: block;
+  padding: 0px 12px;
+  width: 100%;
+  height: auto;
+  grid-area: tabcontent;
+  background-color: #d6e2f7;
+}
+
+.wrapper {
+    padding: 10px;
+    display:grid;
+    gap: 5px;
+}
+
+.tab .wrapper div {
+    display: flex;
+    width:min-content;
+    border-radius: 12px;
+    align-items: center;
+    z-index: 2;
+
+}
+.container {
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
+}
+
+.container button{
+    height: fit-content;
+    width: 10vw;
+    padding: 9px 20px 8px 20px;
+    border-radius: 5px;
+    background-color: #c6d9fa;
+}
+.tabcontent .wrapper .container{
+    background-color: #fff;
+}
+
+#makeNote {
+    justify-content: space-between;
+    gap: 5px;
+    list-style: none;
+    display:grid;
+    width:100vh;
+    height: min-content;
+    padding: 10px;
+    background: #fff;
+    font-size: 18px;
+    border-radius: 12px;
+    /*text color*/
+    color: #2023d49a;
+    cursor: pointer;
+    
+}
+#makeFC {
+    background-color: #fff;
+    display:flex;
+    size: 80px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    /*text color*/
+    color: #2023d49a;
+    cursor: pointer;
+}
+#add-reminder {
+    display:grid;
+    size: 80px;
+    width: fit-content;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 12px;
+    /*text color*/
+    color: #2023d49a;
+    gap: 5px;
+}
+
+.show-note .note, .show-note .note button{
+    width:75vw;
+    padding: 5px;
+    border: solid 1px rgba(0,0,0,0.1);
+}
+.wrapper textarea {
+    font-family: "Poppins", sans-serif;
+    border: 0.5rem solid;
+    border-radius: 5px;
+    border-color: #d6e2f7;
+}
+
+.collapsible {
+    background-color: #d6e2f7;
+    color: Black;
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+
+.add-wrapper {
+    margin:45px;
+    display:grid;
+    grid-template-columns: repeat(auto, 100%);
+    gap: 15px;/* puts a gap between elements in the wrapper class */
+}
+
+.add-wrapper li{
+    height: fit-content;
+    list-style: none; /* makes it so that there are no bullet points for the wrapper*/
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 15px 20px 20px;
+}
+.add-box, .icon, .bottom-content, .settings .menu li, .popup, header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.add-box{
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-box .icon{
+    height: 78px;
+    width: 78px;
+    color: #c6d9fa;
+    font-size: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    border: 2px dashed #d6e2f7;
+    
+}
+.add-box p{
+    color: #90abda;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.add-wrapper .note{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.note p{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.note span{
+    display: block;
+    margin-top: 5px;
+    color: #4b4a4a;
+    font-size: 16px;
+}
+.note .details span{
+    max-height:140px;
+    overflow-y: auto;
+}
+.note .bottom-content{
+    padding-top: 10px;
+    border-top: 1px solid #919191;
+    /* this makes a little design line */
+}
+.bottom-content span{
+    color: #6d6d6d;
+    font-size: 14px;
+}
+.bottom-content .settings{
+    position: relative;
+}
+.bottom-content .settings i{
+    color: #6d6d6d;
+    cursor: pointer;
+    font-size: 15px;
+}
+.settings{
+    position: relative;
+}
+
+.settings .menu{
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    padding: 5px 0;
+    background: #fff;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+ .settings.show .menu{
+    transform: scale(1);
+}
+.settings .menu li{
+    height: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0;
+    padding: 17px 15px;
+    justify-content: flex-start;
+    
+}
+.menu li:hover{
+    background: #f5f5f5;
+}
+.menu li i{
+    padding-right: 8px;
+
+}
+
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width:100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.popup-box .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    max-width: 400px;
+    width:100%;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+}
+
+.popup-box, .popup-box .popup{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+.popup-box.show, .popup-box.show .popup{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.25s ease;
+}
+
+.popup .content{
+    background: #fff;
+    border-radius: 5px;
+    width: calc(100% - 15px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.content header{
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content header p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content header i{
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 23px;
+}
+.content form{
+    margin: 15px 25px 35px;
+
+}
+.content form .row{
+    margin-bottom: 20px;
+}
+
+form .row label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+.content form :where(input, textarea){
+    width: 100%;
+    height: 50px;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #999
+}
+
+.content form textarea{
+    height: 150px;
+    resize: none;
+    padding: 8px 15px;
+}
+
+.content form button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+    background:#c6d9fa;
+}
+
+.note .details span{
+    display: none;
+}
+#notes {
+    background-color: #d6e2f7;
+    font-family: "Poppins", sans-serif;
+}
+
+.hide {
+    display:none;
+}
+.update-controller {
+    display: none;
+}
+
+.entire {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-areas:
+        'tab tabcontent tabcontent tabcontent tabcontent';
+    height: 100vh;
+    width: 100%;
+}
+.hide {
+    display: none;
+}
+
+#flashcards{
+    background-color: #d6e2f7;
+    padding: 10px;
+}
+.flashcard{
+    background-color: #fff;
+    height: 175px;
+    width: 250px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    
+}
+/* for responsiveness on different devices*/
+@media (max-width: 768px) {
+    .flashcard{
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+/* different format for different sizing screens? */
+@media (max-width: 480px) {
+    .create-box{
+        width: 100%;
+    }
+    .fc-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .flashcard{
+        width: 100%;
+    }
+}
+.fc-header {
+    background-color: white;
+}
+.fc-container {
+    width: 95%;
+    max-width: 62.5em;
+    position: relative;
+    margin: auto;
+}
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+button:hover{
+    background-color: #dddddd;
+}
+.fc-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    padding: 20px 0;
+    background-color: white;
+}
+.fc-nav button{
+    font-family: inherit;
+}
+
+.create-box {
+    width: 380px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.create-box textarea{
+    width: 100%;
+    font-family: inherit;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.create-box button{
+    width: fit-content;
+} 
+
+.flashcards{
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px 10px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    gap: 5px;
+}
+.to-do-list {
+    display: grid;
+    gap:10px;
+}
+
+.task, .input-header {
+    border-radius: 5px;
+    padding:10px;
+    background-color: #fff;
+    width: 80vw;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.input-controller textarea, .input-controller-temp textarea{
+    width: 75vw;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+}
+.hidden {
+    display: none;
+}
+
+.todo-app h1{
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.todo-app {
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+}
+
+.todo-app button{
+    background-color: #c6d9fa;
+}
+
+.to-do-input {
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.to-do-input input{
+    width: 20vw;
+}

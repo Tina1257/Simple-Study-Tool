@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="playcss.css">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="heading"><h1><img src="img/caticoncropped.png">Study Tool</h1></div>
+    <div class="entire">
+        <div class="tab">
+            <button class="tablinks" onclick="openFunction(event, 'home')" id="defaultOpen">Home</button>
+            <button class="tablinks" onclick="openFunction(event, 'notes')" id="openNotes">Notes</button>
+            <button class="tablinks" onclick="openFunction(event, 'reminders' )" id="openReminders">To Do List</button>
+            <button class="tablinks" onclick="openFunction(event, 'flashcards')"id="openFlashcards">Flashcards</button>
+        </div>
+        
+        <div id="home" class="tabcontent">
+            <div class="wrapper">
+                <div class="container"><h1>Home</h1></div>
+                <div id ="notes-con" class="container" >
+                    <div id="makeNote">
+                        Notes
+                        <button id="view-note">Show</button>
+                        <button onclick="goToNotes()">Add</button>
+                        <div class="show-note hidden"></div>        
+                    </div>
+                </div>
+                <div id = "reminders-con" class="container" >
+                    <div id="add-reminder">To Do List
+                        <button id="show-r-btn" >Show</button>
+                        <button onclick="goToReminder()">Edit</button>
+                        <div class="show-tasks hidden"></div>        
+                    </div>
+                </div>
+                <div id = "fc-btn" class="container" >
+                    <button id = "makeFC" onclick="goToFlashcards()">Flash Cards</button>
+                </div>
+            </div>
+        
+        </div>
+            <div id="notes" class="tabcontent">
+                <div class="popup-box">
+                    <div class="popup">
+                        <div class="content">
+                            <header>
+                                <p>Add new note</p>
+                                <i class="uil uil-times"></i>
+                            </header>
+                            <form action="#">
+                                <div class="row title">
+                                    <label>Title</label>
+                                    <input type="text">
+                                </div>
+                                <div class="row description">
+                                    <label>Description</label>
+                                    <textarea rows="10" cols="50"></textarea>
+                                </div>
+                                <button>Add Note</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-wrapper">
+                    <li>
+                        <h1>Notes</h1>
+                    </li>
+                    <li class="add-box">
+                        <div class="icon"><i class="uil uil-plus"><!-- here the "uil uil-plus" is the name for an icon. Change later!--></i></div>
+                        <p>Add new note</p>
+                    </li>
+                </div>
+            </div>
+        
+            <div id="reminders" class="tabcontent">
+                <div class="todo-app">
+                    <h1>To do list</h1>
+                    <div class="input-header">
+                        <div class="to-do-input">
+                            <input type="text" id="task" placeholder="Enter task"><button id = "enter"> Enter</button>
+                        </div>
+                    </div>
+                    <div class="to-do-list"></div>
+                </div>
+                </div>
+        
+            <div id="flashcards" class="tabcontent">
+                        <header class="fc-header">
+                            <div class="fc-container">
+                                <div class="fc-nav">
+                                    <h1>Flashcards</h1>
+                                    <div>
+                                        <button class="add-flashcard" onclick="showCreateBox()">Show Create Box</button>
+                                        <button class="delete-card" onclick="deleteCard()">Delete cards</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="flashcards-group">
+                            <div class="fc-container">
+                                <div class="create-box">
+                                    <h1 style="text-align: center;color:black;">Create Flashcard</h1>
+                                    <label for="question">Question:</label>
+                                    <textarea class="input" id="question" placeholder="Type question here" rows="2"></textarea><br>
+                                    <label for="answer">Answer:</label>
+                                    <textarea class="input" id="answer" placeholder="Type answer here" rows="4"></textarea>
+                                    <div>
+                                        <button class="save-q-btn" onclick="addFlashcard()">Save</button>
+                                        <button class="close" onclick="hideCreateBox()">Close</button>
+                                    </div>
+                                </div>
+                                <div class="flashcards"></div>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    <script src="playjs.js"></script>
+
+
+</body>
+</html> 
